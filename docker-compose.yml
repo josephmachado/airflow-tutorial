@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  airflow-tutorial:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: airflow-tutorial
+    container_name: airflow-tutorial
+    ports:
+      - "8080:8080"   # Airflow webserver
+    volumes:
+      - ./airflow/dags:/home/airflow/dags
+ 
