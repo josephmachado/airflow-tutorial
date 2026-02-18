@@ -11,9 +11,9 @@ from airflow.timetables.trigger import CronTriggerTimetable
 
 
 @dag(
-    dag_id="hourly_interval_printer",
+    dag_id="custom_data_interval_minutely_interval_printer",
     schedule=CronTriggerTimetable(
-        "* * * * *",  # every hour on the hour
+        "* * * * *",  # every minute
         timezone="UTC",
         interval=timedelta(hours=1),  # data window = previous hour → now
     ),
