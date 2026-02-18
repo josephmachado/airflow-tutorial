@@ -17,14 +17,6 @@ from airflow.sdk import dag, task
 )
 def simple_dynamic():
     @task()
-    def get_items() -> list[str]:
-        """
-        Returns the list of items to process.
-        In practice this could come from a DB, API, config file, etc.
-        """
-        return ["orders", "customers", "products"]
-
-    @task()
     def process(table: str) -> str:
         """
         This task is dynamically mapped — one instance per item.
@@ -42,7 +34,7 @@ def simple_dynamic():
         for r in results:
             print(f"  ✓ {r}")
 
-    items = get_items()
+    items = ["orders", "customers", "products"]
 
     # .expand() is what makes it dynamic —
     # one task instance is created per element in `items`
