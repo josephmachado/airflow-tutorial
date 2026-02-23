@@ -1,4 +1,4 @@
-Code for [Airflow Tutorial](https://startdataengineering/post/airflow-tutorial/#dags-can-be-scheduled-or-set-to-run-when-a-dataset-is-updated)
+Code for [Airflow 3.0 Tutorial](https://www.startdataengineering.com/post/airflow-tutorial/)
 
 ## Setup 
 
